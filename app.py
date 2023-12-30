@@ -12,6 +12,21 @@ scalar=pickle.load(open('scaling.pkl','rb'))
 def home():
     return render_template('home.html')
 
+#Test with JSON in postman
+#json body: 
+# {
+# "data":{
+# "MedInc":2.33526315,
+# "HouseAge":0.98504972,
+# "AveRooms":0.63012521,
+# "AveBedrms":-0.16586931,
+# "Population":-0.96995366,
+# "AveOccup":-0.04555657,
+# "Latitude":1.04385626,
+# "Longitude":-1.32105914
+# }
+# }
+
 @app.route('/predict_api', methods=['POST'])
 def predict_api():
     data = request.json['data']
@@ -22,6 +37,7 @@ def predict_api():
     print(output[0])
     return jsonify(output[0])
 
+#Test with home html
 @app.route('/predict', methods=['POST'])
 def predict():
     data = [float(x) for x in request.form.values()]
