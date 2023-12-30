@@ -24,3 +24,12 @@ Install libraries
 ```
 pip install -r requirements.txt 
 ```
+
+
+GIT 
+```
+git add .  
+git status
+git commit -m "change database bostom to cali"     
+git push origin main   
+```
